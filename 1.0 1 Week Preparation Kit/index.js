@@ -73,3 +73,59 @@ function timeConversion(s) {
     return militaryTime = hour + s.slice(2,8);
 
 };
+
+// Practice Mock Test
+
+function fizzBuzz(n) {
+
+    if ( n%3 == 0 && n%5 == 0) {
+        console.log("FizzBuzz");
+    } else if ( n%3 == 0 && n%5 != 0) {
+        console.log("Fizz");
+    } else if ( n%3 != 0 && n%5 == 0) {
+        console.log("Buzz");
+    } else {
+        console.log(n);
+    }
+
+};
+
+// Day 1 Mock Test
+
+function findMedian(arr) {
+
+    arr.sort();
+
+    return arr[Math.floor(arr.length/2)];
+
+}
+
+// Lonely Integer
+
+function lonelyInteger(a) {
+
+    a.sort((a, b) => a - b);
+
+    for (let i=0; i < a.length; i++) {
+
+        if (a[i] != a[i+1] && a[i] != a[i-1]) {
+            return a[i];
+        }
+    };
+}
+
+// Diagonal Difference
+
+function diagonalDifference(arr) {
+
+    let leftToRight = 0;
+    let rightToLeft = 0;
+
+    for (let i=0; i < arr.length; i++) {
+        leftToRight += arr[i][i];
+        rightToLeft += arr[i][arr.length - 1 - i];
+    }
+
+    return Math.abs(leftToRight - rightToLeft);
+    
+}
